@@ -1,0 +1,83 @@
+//pug -w ./ -P
+doctype html
+html 
+	include includes/head.html
+	body
+		// SCREEN 1
+		//
+		div.slide_div.b1
+			
+			// CONTENT
+			//
+			div.content_pane(style="padding-top: 60px; padding-left: 150px;")
+				h1 The <br>
+					a.playball(style="font-size: 80px") Grand 
+					a Croatian <br>
+					a Dictionary 
+				img.google_play_icon(src="images/google-play-badge.png" onclick="location.href='https://play.google.com/store/apps/details?id=com.subtlebit.fran_.croatiandictionary&hl=en'")
+				img.google_play_icon(src="images/report-badge.png" onclick="location.href='report.html'")
+				
+			img.screenshot_img(src="images/screenshot.png")
+			
+			
+			// BACKGRUND AND DECORATIONS
+			//
+			div.top_quad
+			div.background_text_img
+				include includes/background_text.txt
+			//img.github_icon(src="images/github_icon.png")
+			div.mid_quad
+			div.quad_text(style="bottom:16px;")
+				p#more_button(style="margin-left: 155px; margin-top: 40px; cursor:pointer") About the Grand Croatian | More resources
+					
+				script.
+					$("#more_button").click(function() {
+					    $([document.documentElement, document.body]).animate({
+					        scrollTop: $("#screen2").offset().top
+					    }, 2000);
+					});
+				
+		// SCREEN 2
+		//
+		div.slide_div.b2#screen2
+		
+			div.content_pane(style="padding:0")
+				table
+					tr
+						td(style="width:60%; padding-left: 150px; padding-right: 20px;")
+							h2 About the Grand Croatian Dictionary
+							p I created the dictionary out of the frustration of trying to learn this language without many resources. The concept of declension was not easy to grasp and I found it difficult to expand my vocabulary, since Croatian words can take many forms and there are many irregular words. Building the dictionary has helped me learn the language faster.
+							p The database was built mainly by scrapping Wiktionary articles from <a href="https://en.wiktionary.org">en.wiktionary.org</a> and <a href="https://sh.wiktionary.org">sh.wiktionary.org</a>. I really appretiate the effort put into this open-source dictionaries. What I simply did was gather the information from these sites, organized it in a structured database and put it in an Android app for easier access.
+							p Using the Grand Croatian Dictionary I was also able to gain some insight on the most frequently used words. This was useful to speed up the learning process. 
+							
+							
+						td(style="padding-left: 10px")
+							h2 More resources
+							p 
+								a(href="https://raw.githubusercontent.com/frankovacevich/GrandDictionary/master/app/src/dict_croatian/assets/wordlist.xml") Download dictionary (xml)
+							p
+								a Python file to work with the dictionary (py)
+							p 
+								a(href="report.html") Most common words (report)
+							p
+								a Most common words list (txt)
+							p
+								a Most common nouns, verbs, adjectives and adverbs
+							p
+								a(href="more/Words_with_unexpected_ending.pdf") Common words with unexpected ending
+							
+		
+			div.bottom_quad
+			div.quad_text(style="bottom:40px; left: 60%; padding-left: 10px;")
+				p 
+					a(href="https://github.com/frankovacevich/GrandDictionary")
+						ion-icon(name='logo-github')
+						| Github
+				p 
+					a(href="https://play.google.com/store/apps/details?id=com.subtlebit.fran_.croatiandictionary&hl=en")
+						ion-icon(name='appstore')
+						| Google Play
+				p 
+				a(href="mailto:subtlebitsoftware@gmail.com")
+					ion-icon(name='mail' style="margin-bottom:-5px")
+					| subtlebitsoftware@gmail.com

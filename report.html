@@ -1,0 +1,105 @@
+
+<html>
+   <head>
+	<meta charset="utf-8"/>
+
+	<!-- Title and favicon -->
+	<title>Grand Croatian Dictionary</title>
+	<link rel="shortcut icon" type="image/png" href="images/favicon.png"/>
+
+	<!-- Open all links in new tab -->
+	<base target="_blank">
+
+	<!-- Adjust viewport for mobile -->
+	<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+	<!-- JQuery -->
+	<script
+			  src="https://code.jquery.com/jquery-3.4.1.min.js"
+			  integrity="sha256-CSXorXvZcTkaix6Yvo6HppcZGetbYMGWSFlBw8HfCJo="
+			  crossorigin="anonymous"></script>
+
+	<!-- Bootstrap -->
+	<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+	<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous"></script>
+	<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
+
+	<!-- Plotly -->
+	<script src="https://cdn.plot.ly/plotly-latest.min.js"></script>
+
+	<!-- Mathjax -->
+	<script type="text/javascript" async src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.5/MathJax.js?config=TeX-MML-AM_CHTML"></script>
+
+	<!-- Ion Icons -->
+	<script src="https://unpkg.com/ionicons@4.5.5/dist/ionicons.js"></script>
+
+	<!-- Import styles -->
+	<link rel='stylesheet' href='styles/style.css'/>
+
+	<!-- Enable tooltips in Bootstrap -->
+	<script> $(function () { $('[data-toggle="tooltip"]').tooltip() }) </script>
+
+	<style id="jquery_print_styling"></style>
+
+</head>
+
+  <body>
+    <div class="report">
+      <h1>Frequent Croatian Words</h1>
+      <p class="author">Francisco Kovacevich, June 2019</p>
+      <p>Some insight on the composition of the Croatian language and its most frequent words that might help the student.</p>
+      <h2>About the Grand Croatian Dictionary</h2>
+      <p>The Grand Croatian Dictionary started as a simple project to help me learn this beautiful language. My family has Croatian roots and I was required to learn the language to get the Croatian citizenship, so I started learning from different online resources. It took me several months to even start to grasp the concept of declensions; I speak fluently English, French and Spanish, but none of these languages have this characteristic. Also, Slavic vocabulary is so different from that of these romantic languages that it's even harder to memorize even the simplest words.</p>
+      <p>My frustration with learning the language grew even greater trying to find useful material on the internet. I started building a dictionary by myself to recognize every words and it's declensions. This is how the Croatian Dictionary came to be. I used data from the Wiktionary articles, which is very complete but cumbersomely spread across the English Wiktionary Page (<a href="en.wictionary.org">en.wictionary.org</a>), the Croatian Wiktionary Page (<a href="hr.wiktionary.org">hr.wiktionary.org</a>) and the Serbo-Croatian Wiktionary Page (<a href="sh.wiktionary.org">sh.wiktionary.org</a>). I also used the Glosbe Dictionary (<a href="https://glosbe.com/">glosbe.com</a>) and even sometimes Google Translate and Microsoft (Bing) Translator. There are sure many errors in the dictionary (even some errors are present in the Wiktionary pages), but with time I hope it will grow more reliable. A more complete dictionary for fluent in Croatian speakers can be found at <a href="http://hjp.znanje.hr/">http://hjp.znanje.hr/</a>. The HJP (Hrvatski Jezični Portal) is a extremely complete dictionary, with the disadvantage that it's fully in Croatian, isn't available in a n App and can't be used offline.</p>
+      <p>I profited a lot from building the Grand Croatian Dictionary, and I was able to learn Croatian faster. Later I built a smaller spinoff of the Grand Croatian Dictionary for Russian (The Grand Russian Dictionary), also available on Google Play. I also find that Russian learners were lacking a tool to easily search words and their declensions and conjugations.</p>
+      <p>With the dictionary I built for the Grand Croatian Dictionary App I was able to perform some studies of the mostly used words in Croatian. I wanted to share the results in this website. Although learning directly from word frequency lists is not always the best way to learn a language, it does certainly help to learn faster.</p>
+      <p>All the source code can be found at <a href="https://github.com/frankovacevich/grand_dictionary_ipy_notebook">github.com/frankovacevich/grand_dictionary_ipy_notebook</a>.</p>
+      <h2>Corpora</h2>
+      <p>To study the most frequent words, I started searching some corpora in Croatian. In linguistics, a corpus (plural corpora) or text corpus is a large and structured set of texts (nowadays usually electronically stored and processed) [<a href="https://en.wikipedia.org/wiki/Text_corpus">en.wikipedia.org/wiki/Text_corpus</a>]. I only found one that is publicly available on the internet, compiled by Hermit Dave (<a href="https://invokeit.wordpress.com/frequency-word-lists/">https://invokeit.wordpress.com/frequency-word-lists/</a>) using some Open Subtitles database subtitles as a source.</p>
+      <p>There are some other corpora built by Croatian academics, but they only allow you to consult the corpus and not download it completely. However, I was able to scrap the webpage of the <a href="http://riznica.ihjj.hr/philologic/Cijeli.whizbang.form.en.html">Croatian Language Corpus (HJK)</a> using some python code to rebuild the frequency of each word in the corpus itself (this is what I want to extract from each corpus at last). The Croatian Language Corpus (Croatian: Hrvatski jezični korpus, HJK) is a corpus of Croatian compiled at the Institute of Croatian Language and Linguistics (IHJJ) [<a href="https://en.wikipedia.org/wiki/Croatian_Language_Corpus">en.wikipedia.org/wiki/Croatian_Language_Corpus</a>].</p>
+      <p>Finally I decided to complete my set with two more corpora. First, I used another Open Subtitles database (like Hermit Dave) to build a 4Gb corpus. I used the subtitles from the Spanish-Croatian dataset. Arguably, there are some phrases in this dataset that are not common in current Croatian, since they might be forced or literal translation from the Spanish language, but however I thought it was valid to use it to expand the corpora set. Finally I scrapped some articles from the Croatian Wikipedia Portal (<a href="hr.wikipedia.org">hr.wikipedia.org</a>). I scrapped mainly long articles, and built a 800Mb corpus. </p>
+      <p>With four corpora in my hands, two built from Open Subtitles datasets and two from written literature and academic articles, I was satisfied. Here are the number of unique words (not repeated) of each corpus (in millions):</p>
+      <ul>
+        <li>Hermit Dave's Corpus: 213.829154M words</li>
+        <li>HJK Corpus: 88.316596M words</li>
+        <li>Open Subtitles Corpus: 196.755303M words</li>
+        <li>Wikipedia Corpus 61.987162M words</li>
+      </ul>
+      <p>Word frequency lists for each corpus can be found on the github repository listed above (with the .summary extension). Interestingly, the Open Subtitles corpus was very different from the Wikipedia and HJK corpus; there were many swore words and informal expressions on the former, that are common only in oral speech. Since I was planning to learn not only formal Croatian but spoken too, I decided to try to combine this three corpora (I left the Hermit Dave's corpus out for most calculations because I wanted to work only with the corpora I had built, and use Hermit Dave's only for comparison later). To combine the corpora I used the following formula for each word with $x$ frequency:</p>$$ \bar{x} = \left( \frac{1}{x_{Wiki}} + \frac{1}{x_{OpenSubs}} + \frac{1}{x_{HJK}} \right)^{-1} $$
+      <p>This way, the words that are present in the three corpora are better valued, without eliminating those that are present only in one corpus (as an analogy with a circuit with resistors in parallel instead of in series). I was satisfied with how this corpus turned out, so I ended up using it to build some frequency list to study.</p>
+      <h2>Words present in the Grand Croatian Dictionary</h2>
+      <p>Are all the words in the corpora present in the Grand Croatian Dictionary? Certainly not. There are many words that are very strange and rarely used. There are names of people and places that should not be in a dictionary. There are some errors and typos too. But there are also many words that should be on the Dictionary and they're not, although after comparing the dictionary with the corpora I was able to identify many words missing (and later added them).</p>
+      <p>To compare the corpora with the Grand Croatian Dictionary is important to bear in mind that some words can have many forms. Nouns and adjectives can be declined, and verbs can be conjugated. Each different form is present in the corpora in as is, but in the dictionary nouns and adjectives are in nominative singular and verbs in infinitive. To see if a word of the corpora is present in the Dictionary one has to see if some alternative form of the word is in the Dictionary as well.</p>
+      <p>In the Figure below (Figure 1) there is a plot of the frequency of each word against the number of words with that frequency (see <a href="https://en.wikipedia.org/wiki/Zipf%27s_law">https://en.wikipedia.org/wiki/Zipf%27s_law</a>). Both lines were built with the HJK corpus. We can see that both lines depart at a frequency below 0.016 (1/1000) words. This means that for words with a greater frequency can be found on the Dictionary (with some exceptions like names and such, that explains why both lines don't match exactly).</p>
+      <iframe width="100%" height="400px" frameborder="0" seamless="seamless" scrolling="no" src="plots/plot1.html"></iframe>
+      <p class="label">Figure 1. Word frequency vs count for the HJK corpus, comparing the words that are in the Dictionary with the total words in the corpus.</p>
+      <p>The same concept is shown in Figure 2 for the Open Subtitles corpus.</p>
+      <iframe width="100%" height="400px" frameborder="0" seamless="seamless" scrolling="no" src="plots/plot2.html"></iframe>
+      <p class="label">Figure 2. Word frequency vs count for the Open Subtitles corpus, comparing the words that are in the Dictionary with the total words in the corpus.</p>
+      <h2>Comparison between corpora</h2>
+      <p> Figure 3 shows the word frequency vs count plot for the different corpora, for only the words present in the Dictionary. One can see how the Wikipedia and the HJK corpora are similar.</p>
+      <p> In Figure 4 are the most frequent words present in each corpus. It's interesting to see how different words rank differently in frequency for each corpus, with the Open Subtitles corpus showing the greater discrepancies.</p>
+      <iframe width="100%" height="400px" frameborder="0" seamless="seamless" scrolling="no" src="plots/plot3.html"></iframe>
+      <p class="label">Figure 3. Word frequency vs count for the different corpora, for only the words present in the Dictionary.</p>
+      <iframe width="100%" height="400px" frameborder="0" seamless="seamless" scrolling="no" src="plots/plot6.html"></iframe>
+      <p class="label">Figure 4. Most frequent words in each corpora.</p>
+      <h2>Words by type</h2>
+      <p>To study the words by frequency, it's often useful to arrange them by type (Verb, Adjective, Adverb and Noun). Having them classified in the Dictionary, this is easy to do, though there may be some errors since one can find words that are written exactly the same but derive from different words. This happens specially with adjectives and adverbs, since most adverbs can be formed from the neutral singular form of the corresponding adjective. Thus, we present Figures 5 and 6, each showing the frequency vs count for words in the combined corpus separated by type, the second figure combining adjectives and adverbs.</p>
+      <iframe width="100%" height="400px" frameborder="0" seamless="seamless" scrolling="no" src="plots/plot4.html"></iframe>
+      <p class="label">Figure 5. Word frequency vs count for the combined corpus, separated by type.</p>
+      <iframe width="100%" height="400px" frameborder="0" seamless="seamless" scrolling="no" src="plots/plot5.html"></iframe>
+      <p class="label">Figure 6. Word frequency vs count for the combined corpus, separated by type, combining adjectives and adverbs together.</p>
+      <h2>Frequency lists</h2>
+      <p>From the previous figures one can derive how many words of each type one should learn to reach a certain level. There are some correlations between the extent of one's vocabulary and the overall dominance of the  (see for example <a href="https://universeofmemory.com/how-many-words-you-should-know/">https://universeofmemory.com/how-many-words-you-should-know/</a>).</p>
+      <p>Here are the list of most frequent words for each type:</p>
+      <ul>
+        <li>verbs</li>
+        <li>adjectives and adverbs</li>
+        <li>nouns</li>
+      </ul>
+      <p>For the verbs list, the verbs have been grouped by stem, which makes it easier to learn. They have also been paired with their corresponding perfective or imperfective form. To learn more you can read the repository (indicated above).</p>
+      <p></p>
+      <p></p>
+    </div>
+  </body>
+</html>
