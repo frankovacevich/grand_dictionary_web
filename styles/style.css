@@ -165,18 +165,18 @@ h2 {
   margin-bottom: 30px;
   line-height: 30px;
 }
-.report p a:link {
+.report a:link {
   color: black;
   text-decoration: underline;
 }
-.report p a:visited {
+.report a:visited {
   color: black;
 }
-.report p a:hover {
+.report a:hover {
   color: black;
   text-decoration: underline;
 }
-.report p a:active {
+.report a:active {
   color: black;
 }
 .report p.label {

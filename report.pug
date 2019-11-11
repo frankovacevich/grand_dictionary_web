@@ -9,17 +9,18 @@ html
 			
 			p Some insight on the composition of the Croatian language and its most frequent words that might help the student.
 			
+			p All the source code can be found at <a href="https://github.com/frankovacevich/grand_dictionary_ipy_notebook">github.com/frankovacevich/grand_dictionary_ipy_notebook</a>.
+			
 			h2 About the Grand Croatian Dictionary
 
-			p The Grand Croatian Dictionary started as a simple project to help me learn this beautiful language. My family has Croatian roots and I was required to learn the language to get the Croatian citizenship, so I started learning from different online resources. It took me several months to even start to grasp the concept of declensions; I speak fluently English, French and Spanish, but none of these languages have this characteristic. Also, Slavic vocabulary is so different from that of these romantic languages that it's even harder to memorize even the simplest words.
+			p The Grand Croatian Dictionary started as a simple project to help me learn this beautiful language. My family has Croatian roots and I was required to learn the language to get the Croatian citizenship, so I started learning from different online resources. It took me several months to even start to grasp the concept of declensions; I speak fluently English, French and Spanish, but none of these languages have this characteristic. Also, Slavic vocabulary is so different from that of these romantic languages that it's hard to memorize even the simplest words.
 			
 			p My frustration with learning the language grew even greater trying to find useful material on the internet. I started building a dictionary by myself to recognize every words and it's declensions. This is how the Croatian Dictionary came to be. I used data from the Wiktionary articles, which is very complete but cumbersomely spread across the English Wiktionary Page (<a href="en.wictionary.org">en.wictionary.org</a>), the Croatian Wiktionary Page (<a href="hr.wiktionary.org">hr.wiktionary.org</a>) and the Serbo-Croatian Wiktionary Page (<a href="sh.wiktionary.org">sh.wiktionary.org</a>). I also used the Glosbe Dictionary (<a href="https://glosbe.com/">glosbe.com</a>) and even sometimes Google Translate and Microsoft (Bing) Translator. There are sure many errors in the dictionary (even some errors are present in the Wiktionary pages), but with time I hope it will grow more reliable. A more complete dictionary for fluent in Croatian speakers can be found at <a href="http://hjp.znanje.hr/">http://hjp.znanje.hr/</a>. The HJP (Hrvatski Jezični Portal) is a extremely complete dictionary, with the disadvantage that it's fully in Croatian, isn't available in a n App and can't be used offline.
 			
 			p I profited a lot from building the Grand Croatian Dictionary, and I was able to learn Croatian faster. Later I built a smaller spinoff of the Grand Croatian Dictionary for Russian (The Grand Russian Dictionary), also available on Google Play. I also find that Russian learners were lacking a tool to easily search words and their declensions and conjugations.
 			
 			p With the dictionary I built for the Grand Croatian Dictionary App I was able to perform some studies of the mostly used words in Croatian. I wanted to share the results in this website. Although learning directly from word frequency lists is not always the best way to learn a language, it does certainly help to learn faster.
-			
-			p All the source code can be found at <a href="https://github.com/frankovacevich/grand_dictionary_ipy_notebook">github.com/frankovacevich/grand_dictionary_ipy_notebook</a>.
+	
 
 			h2 Corpora
 			
@@ -32,10 +33,10 @@ html
 			p With four corpora in my hands, two built from Open Subtitles datasets and two from written literature and academic articles, I was satisfied. Here are the number of unique words (not repeated) of each corpus (in millions):
 			
 			ul
-				li Hermit Dave's Corpus: 213.829154M words
-				li HJK Corpus: 88.316596M words
-				li Open Subtitles Corpus: 196.755303M words
-				li Wikipedia Corpus 61.987162M words
+				li Hermit Dave's Corpus: 213.829154M words (<a href="https://raw.githubusercontent.com/frankovacevich/grand_dictionary_ipy_notebook/master/corpus/hermitdave.summary">download</a>)
+				li HJK Corpus: 88.316596M words (<a href="https://raw.githubusercontent.com/frankovacevich/grand_dictionary_ipy_notebook/master/corpus/hjk.summary">download</a>)
+				li Open Subtitles Corpus: 196.755303M words (<a href="https://raw.githubusercontent.com/frankovacevich/grand_dictionary_ipy_notebook/master/corpus/opensub.summary">download</a>)
+				li Wikipedia Corpus 61.987162M words (<a href="https://raw.githubusercontent.com/frankovacevich/grand_dictionary_ipy_notebook/master/corpus/wikipedia.summary">download</a>)
 			
 			p Word frequency lists for each corpus can be found on the github repository listed above (with the .summary extension). Interestingly, the Open Subtitles corpus was very different from the Wikipedia and HJK corpus; there were many swore words and informal expressions on the former, that are common only in oral speech. Since I was planning to learn not only formal Croatian but spoken too, I decided to try to combine this three corpora (I left the Hermit Dave's corpus out for most calculations because I wanted to work only with the corpora I had built, and use Hermit Dave's only for comparison later). To combine the corpora I used the following formula for each word with $x$ frequency:
 			
@@ -88,12 +89,20 @@ html
 			p Here are the list of most frequent words for each type:
 			
 			ul
-				li verbs
-				li adjectives and adverbs
-				li nouns
+				li verbs (<a href="https://raw.githubusercontent.com/frankovacevich/grand_dictionary_ipy_notebook/master/most_frequent/Verb.html">download</a>)
+				li adjectives and adverbs (<a href="https://raw.githubusercontent.com/frankovacevich/grand_dictionary_ipy_notebook/master/most_frequent/AdjectiveAdverb.html">download</a>)
+				li nouns (<a href="https://raw.githubusercontent.com/frankovacevich/grand_dictionary_ipy_notebook/master/most_frequent/Noun.html">download</a>)
 				
-			p For the verbs list, the verbs have been grouped by stem, which makes it easier to learn. They have also been paired with their corresponding perfective or imperfective form. To learn more you can read the repository (indicated above).
+			p For the verbs list, the verbs have been grouped by stem, which makes it easier to learn. They have also been paired with their corresponding perfective or imperfective form (with the imperfective form usually in italics). To learn more you can read the repository (indicated above).
 			
+			p In some cases I added a "!" sign to indicate that the word can be irregular. Nouns that have an unexpected gender have also been indicated.
+			
+			p Here are two other lists of words that bight be useful:
+			
+			ul
+				li irregular adjectives (<a href="https://raw.githubusercontent.com/frankovacevich/grand_dictionary_ipy_notebook/master/most_frequent/irregular_adjectives.txt">download</a>)
+				li irregular comparatives (<a href="https://raw.githubusercontent.com/frankovacevich/grand_dictionary_ipy_notebook/master/most_frequent/irregular_comparatives.txt">download</a>)
+				
 			p
 				
 			p
